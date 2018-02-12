@@ -1,0 +1,53 @@
+ins {
+    @if (
+        $ins-text-decoration-line != $u-text-decoration-line or
+        $ins-text-decoration-style != $u-text-decoration-style or
+        $ins-text-decoration-color != $u-text-decoration-color
+    ) {
+        @include text-decoration-shorthand((
+            line: $ins-text-decoration-line,
+            style: $ins-text-decoration-style,
+            color: $ins-text-decoration-color,
+            make-shorthand: true
+        ));
+    }
+    @if mixin-exists(ins-extra-style) {
+        @include ins-extra-style();
+    }
+}
+
+u {
+    @if (
+        $ins-text-decoration-line != $u-text-decoration-line or
+        $ins-text-decoration-style != $u-text-decoration-style or
+        $ins-text-decoration-color != $u-text-decoration-color
+    ) {
+        @include text-decoration-shorthand((
+            line: $u-text-decoration-line,
+            style: $u-text-decoration-style,
+            color: $u-text-decoration-color,
+            make-shorthand: true
+        ));
+    }
+    @if mixin-exists(u-extra-style) {
+        @include u-extra-style();
+    }
+}
+
+ins, u {
+    @if (
+        $ins-text-decoration-line == $u-text-decoration-line and
+        $ins-text-decoration-style == $u-text-decoration-style and
+        $ins-text-decoration-color == $u-text-decoration-color
+    ) {
+        @include text-decoration-shorthand((
+            line: $ins-text-decoration-line,
+            style: $ins-text-decoration-style,
+            color: $ins-text-decoration-color,
+            make-shorthand: true
+        ));
+    }
+    @if mixin-exists(ins-u-extra-style) {
+        @include ins-u-extra-style();
+    }
+}

@@ -1,0 +1,14 @@
+//Ins
+$ins-text-decoration-line: underline !default;
+$ins-text-decoration-style: null !default;
+$ins-text-decoration-color: null !default;
+//@mixin ins-extra-style() {} //Create this mixin before import module when you want add some special style for element
+
+//U
+$u-text-decoration-line: underline !default;
+$u-text-decoration-style: null !default;
+$u-text-decoration-color: null !default;
+//@mixin u-extra-style() {} //Create this mixin before import module when you want add some special style for element
+
+//Ins U
+//@mixin ins-u-extra-style() {} //Create this mixin before import module when you want add some special style for element

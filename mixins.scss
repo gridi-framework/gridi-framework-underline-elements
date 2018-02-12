@@ -1,0 +1,43 @@
+//Ins
+//@mixin ins-extra-colors-propertys($colors-map) {} //Create this mixin before import module when you want add some special colors style for element
+
+@mixin ins-colors-propertys($colors-map) {
+    @include property-from-map($colors-map, text-decoration-color);
+    @if mixin-exists(ins-extra-colors-propertys) {
+        @include ins-extra-colors-propertys($colors-map);
+    }
+}
+
+@mixin ins-colors($colors-map) {
+    ins {
+        @include ins-colors-propertys($colors-map);
+    }
+}
+
+@mixin class-ins-colors($class, $colors-map) {
+    ins.#{$class} {
+        @include ins-colors-propertys($colors-map);
+    }
+}
+
+//U
+//@mixin u-extra-colors-propertys($colors-map) {} //Create this mixin before import module when you want add some special colors style for element
+
+@mixin u-colors-propertys($colors-map) {
+    @include property-from-map($colors-map, text-decoration-color);
+    @if mixin-exists(u-extra-colors-property) {
+        @include u-extra-colors-propertys($colors-map);
+    }
+}
+
+@mixin u-colors($colors-map) {
+    u {
+        @include u-colors-propertys($colors-map);
+    }
+}
+
+@mixin class-u-colors($class, $colors-map) {
+    u.#{$class} {
+        @include u-colors-propertys($colors-map);
+    }
+}
